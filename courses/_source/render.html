@@ -1,0 +1,23 @@
+<!doctype html><meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>body{margin:0;background:#fff}canvas{display:block;margin:4px}</style>
+<div id="root"></div>
+<script src="engine.js"></script>
+<script>
+(async () => {
+  try { await (document.fonts ? document.fonts.ready : Promise.resolve()); } catch(e){}
+  await new Promise(r => setTimeout(r, 400));
+  const root = document.getElementById('root');
+  for (const co of COURSES) {
+    const ic = document.createElement('canvas'); ic.id = 'icon-' + co.slug;
+    root.appendChild(ic); drawIcon(ic, co, 512, false);
+    const cv = document.createElement('canvas'); cv.id = 'cover-' + co.slug;
+    root.appendChild(cv); drawCover(cv, co);
+    cv.style.width = ''; cv.style.height = '';
+  }
+  await new Promise(r => setTimeout(r, 200));
+  window.__ready = true;
+})();
+</script>
