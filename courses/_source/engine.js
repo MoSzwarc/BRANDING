@@ -125,13 +125,17 @@ const OBJ = {
     spath(ctx,[C,C2],CHAR,1.7); spath(ctx,[B,B2],CHAR,1.7); spath(ctx,[C2,B2],CHAR,1.7);
     // front face
     spath(ctx,[A,B,C],CHAR,2.4,true);
-    // the ray: in through the left face, across the body, out the right face
-    const P1=[cx-9*k,cy-1*k], P2=[cx+8*k,cy+4*k];
-    sline(ctx,cx-40*k,cy-7*k,P1[0],P1[1],CHAR,2);
+    // the ray: enters the left face at P1, refracts, and arrives at ONE contact
+    // point P2 on the right face — the single origin for the spectrum fan.
+    const P1=[cx-9*k,cy-1*k], P2=[cx+7*k,cy+1*k];
+    sline(ctx,cx-42*k,cy-4*k,P1[0],P1[1],CHAR,2);
     sline(ctx,P1[0],P1[1],P2[0],P2[1],CHAR,2);
-    // spectrum fan from the exit point
-    const ang=[-0.34,-0.14,0.06,0.26,0.46];
-    ang.forEach(a=> sline(ctx,P2[0],P2[1], P2[0]+Math.cos(a)*26*k, P2[1]+Math.sin(a)*26*k, GOLD, a===0.06?2.6:1.9));
+    // spectrum fan: all from P2, ~40deg total spread, 5 even rays, shorter, thinner
+    const base=Math.atan2(P2[1]-P1[1],P2[0]-P1[0]), spread=0.70, n=5, len=17*k;
+    for(let i=0;i<n;i++){
+      const a=base - spread/2 + spread*(i/(n-1));
+      sline(ctx,P2[0],P2[1], P2[0]+Math.cos(a)*len, P2[1]+Math.sin(a)*len, GOLD, 1.6);
+    }
   },
   mg(ctx,cx,cy,k){ // globe with curved meridians + mortarboard
     const gy=cy+7*k, r=15*k;
