@@ -165,12 +165,12 @@ const COURSES=[
   {key:'ecp', name:'Executive Coaching Package', cat:'One-to-one engagement', obj:'two bubbles facing — the conversation between two', slug:'executive-coaching-package'},
   {key:'beia', name:'Business English in Action', cat:'Self-paced program', obj:'a briefcase, already in motion', slug:'business-english-in-action'},
   {key:'db', name:'Brazil Unpacked: The Cultural Operating System', sub:'Culture, Power, and Professional Judgment for International Professionals', cat:'Standalone program', obj:'an iceberg — the culture running below the waterline', slug:'brazil-unpacked'},
-  {key:'cm', name:'EGC · Capital Markets', cat:'Executive Global Communication', obj:'four bars rising, the last one gold', slug:'egc-capital-markets'},
-  {key:'hr', name:'EGC · HR & Talent', cat:'Executive Global Communication', obj:'three linked figures, the lead one gold', slug:'egc-hr-talent'},
-  {key:'lg', name:'EGC · Logistics', cat:'Executive Global Communication', obj:'a container under a plotted route', slug:'egc-logistics'},
+  {key:'cm', name:'Capital Markets & Finance', cat:'Masterclass', obj:'four bars rising, the last one gold', slug:'capital-markets-finance'},
+  {key:'hr', name:'HR & Talent', cat:'Executive Global Capsule', obj:'three linked figures, the lead one gold', slug:'capsule-hr-talent'},
+  {key:'lg', name:'Logistics & Supply Chain', cat:'Executive Global Capsule', obj:'a container under a plotted route', slug:'capsule-logistics-supply-chain'},
   {key:'fl', name:'Interpretive Leadership', sub:'Leading Through Ambiguity, Bias, Culture, and AI', cat:'Standalone program', obj:'a prism — one situation in, a fan of readings out', slug:'interpretive-leadership'},
   {key:'mg', name:'Meet & Greet', cat:'Standalone program', obj:'the canonical cue — mortarboard over a globe', slug:'meet-and-greet'},
-  {key:'ptm', name:'Portuguese through Music', cat:'Standalone program', obj:'a single note lifting off the staff', slug:'portuguese-through-music'}
+  {key:'ptm', name:'Portuguese Through Brazilian Music', cat:'Executive Global Capsule', obj:'a single note lifting off the staff', slug:'capsule-portuguese-brazilian-music'}
 ];
 
 function paper(ctx,w,h){
